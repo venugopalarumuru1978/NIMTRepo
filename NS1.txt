@@ -43,5 +43,4 @@ Application Creation
 6.  Testing Parts
 7.  Deployement process based on Type of Application.
 ---------------------------
-SDLC :- 
-
+SDLC :- Software Development Life Cycle
