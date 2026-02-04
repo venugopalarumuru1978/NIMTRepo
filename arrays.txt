@@ -1,0 +1,30 @@
+Arrays:- 
+-----------
+It is an variable which allows to store mutliple of similar/different data type.
+
+Single Dimensional Array :-  It is the process of arranging values either in single row / single col.
+
+
+			let <variable> = [val1, val2, val3,...]
+					or
+			let <variable> = new Array(size);
+
+
+Double Dimensional Array :- It is the process of arragning values in no of rows and no of cols. 
+				
+			let <variable> = [[val1, val2,...],[val1, val2,...],.....];
+
+push() :-  this method is used to add value to the array at the ending position. 
+		arrayName.push(value);
+
+insert() :-  this mehtod is used to add value at the specific index position. 
+		arrayName.insert(index,value);
+
+pop() :-  this will remove last value from array
+		arrayName.pop()
+
+splice() :-  this method remove's set of values from an array
+			arrayName.splice(index,no of values);
+
+length :-  will count no of values in an array.
+			arrayName.length

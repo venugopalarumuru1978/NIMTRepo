@@ -1,0 +1,47 @@
+1. SDLC - Agile
+2. Git and GitHub
+3. SQL
+4. Angular
+5. Cucumber
+-----------------
+Today's Agenda
+-----------------
+SDLC
+Agile Process
+-----------------
+
+Different Types of Application
+------------------------------
+Dekstop Applications :- these apps are used in local machines. 
+				All Billing Softwares
+Network Applications  :-  these apps are used in Client - Server Enviornment. 
+				Every Org need Network App
+				Ex:-  Banking Software
+Web Applications	:-  All websites
+Mobile APplications	:-  All Mobile Apps
+Device APplications	:-  these apps are used to activate electronic devices
+				Ex:-  Device Drivers
+
+SDLC :-  Software Development Life Cycle  Models
+-------------------------------------------------
+Application Creation
+---------------------
+1.  Development  :-  Creating an application using particular prog lang.
+2.  Testing	 :-  Test the application.
+3.  Deployment	 :-  Implementation process of the application.
+----------------------
+1.  Gathering the requirements 
+2.  Existing System and Proposed System
+3.  Analysis Process
+		Divide the project int Modules.
+		System Design (UML Diagrams)
+		Design the data storage part(Database Design)
+4.  Software and Hardware Requirements.
+	Prog lang, OS, Database, ......
+	System Configurations
+5.  Development Starts (Coding....)
+6.  Testing Parts
+7.  Deployement process based on Type of Application.
+---------------------------
+SDLC :- 
+

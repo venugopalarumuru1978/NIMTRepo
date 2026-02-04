@@ -1,0 +1,44 @@
+Hemanth :-  
+
+Dotnet FSD:- 
+-----------
+.Net
+1. C#.Net
+2. ADO.Net
+3. ASP.Net
+4. ASP.Net MVC
+5. ASP.Net Core
+6. REST Api's
+----
+DB :-  
+SQL Server
+Entity Framework
+----------
+Front End :-  Web
+HTML, CSS, JS, BootStrap, React
+----------
+Deployment :- 
+Git & GitHub
+CI/CD using Azure
+----------
+
+Nagini
+
+Java:- 
+Core Java & Adv. Java(Servlets and JSP)
+JDBC
+Spring Framework(Core, MVC, Spring Boot)
+
+DB:- MySQL
+Hibernate
+-----------
+Front End :-  Web
+HTML, CSS, JS, BootStrap, React
+---------
+Deployment
+Git & GitHub, Jenkins, Docker
+CI/CD using AWS(EC2, S3, RDS)
+-----------
+FrontEnd
+DB
+---------------
