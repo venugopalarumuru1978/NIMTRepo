@@ -44,3 +44,15 @@ Application Creation
 7.  Deployement process based on Type of Application.
 ---------------------------
 SDLC :- Software Development Life Cycle
+1.  Gathering the requirements 
+2.  Existing System and Proposed System
+3.  Analysis Process
+		Divide the project int Modules.
+		System Design (UML Diagrams)
+		Design the data storage part(Database Design)
+4.  Software and Hardware Requirements.
+	Prog lang, OS, Database, ......
+	System Configurations
+5.  Development Starts (Coding....)
+6.  Testing Parts
+7.  Deployement process based on Type of Application.

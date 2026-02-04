@@ -1,0 +1,37 @@
+Exception Handling:- 
+-------------------
+
+Every Programming Language having dealing with Errors. 
+
+Errors are classified into 3 types
+
+1. Compile Time Errors  :-  At the time coding or before execution program.
+					syntax errors
+					missing quotations / semi colon
+2. Logical Errors	:-  these are logic mistakes done by the developer. 
+				here program will run successfully, but expected output won't come. 
+
+3. Run Time Errors  :- these errors occurs at the time of program execution. 
+				1.  Invalid Operations
+				2.  Invalid Inputs
+
+
+Exception Handling :-  Exception is an abnormal situation of the program where runtime error occurs.
+		Exception Handling is the process of handling the exceptions. 
+
+as per python following keywords are used:-  try, except, finally, raise, ....
+Python identifies all the exceptions in the form of pre defined classes. 
+All exceptions are child classes of Exception class. Exception class is used to handle any type exception. 
+
+try:
+	actual program
+except  <exception_class_name> as Obj:
+	error handling program
+
+One try block will have multiple except blocks to handle indivisual exceptions. but here we must that exception name.
+
+
+
+
+
+
