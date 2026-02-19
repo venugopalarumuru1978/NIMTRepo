@@ -1,0 +1,21 @@
+body{
+    background-color: khaki;
+    margin: 20px;
+}
+table{
+    background-color: darkseagreen;
+    color: whitesmoke;
+}
+th{
+    color:blue;
+}
+.para1{
+    border: solid;
+    border-radius: 10px;
+    background-color: bisque;                
+    text-align: center;
+    height: 30px;
+}
+.para2{
+    text-align: justify;
+}

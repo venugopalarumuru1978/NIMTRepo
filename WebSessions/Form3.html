@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Button Demo</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <h1 style="text-align: center;">JS - Textbox Button Demo</h1>
+    <hr />
+    <form  name="frmCal">
+        <p style="text-align: center;">
+            <input type="text"   name="txtVal1"  placeholder="Value 1" />
+            <br /><br />
+            <input type="text"   name="txtVal2"  placeholder="Value 2" />
+            <br /><br />
+            <input type="button"  value="Addition" onclick="Addition()" />
+            &nbsp;&nbsp;&nbsp;
+            <input type="button"  value="Clear Form" onclick="ResetForm()" />
+        </p>
+    </form>
+    <h1 style="text-align: center;"  id="result"></h2>
+    <script   type="text/javascript">
+        function  Addition()
+        {
+            let x =  parseFloat(frmCal.txtVal1.value);
+            let y = parseFloat(frmCal.txtVal2.value);
+            let sum = x+y;
+            document.getElementById("result").innerHTML  =  "Addition is " +  sum;
+        }
+
+        function ResetForm()
+        {
+            frmCal.txtVal1.value = "";
+            frmCal.txtVal2.value = "";
+            document.getElementById("result").innerHTML = "";
+        }
+    </script>
+</body>
+</html>

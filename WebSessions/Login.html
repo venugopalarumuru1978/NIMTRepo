@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Button Demo</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <h1 style="text-align: center;">JS - Login Page</h1>
+    <hr />
+    <form  name="frmLogin"  method="POST" onsubmit="return LoginFun()" action="Page3.html">
+        <p style="text-align: center;">
+            <input type="text"   name="txtUser"  placeholder="Username" />
+            <br /><br />
+            <input type="password"   name="txtPass"  placeholder="Password" />
+            <br /><br />
+            <input type="submit"  value="Login here"  />
+            &nbsp;&nbsp;&nbsp;
+            <input type="reset"  value="Clear Form"  />
+        </p>
+    </form>
+    <h1 style="text-align: center;"  id="result"></h2>
+    <script   type="text/javascript">
+        function  LoginFun()
+        {
+            let uname = frmLogin.txtUser.value;
+            let pwd = frmLogin.txtPass.value;
+
+            if(uname=="Venugopal" && pwd=="v@123")
+            return true;
+            else
+            {
+                alert("Please check username / password");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
