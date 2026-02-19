@@ -1,0 +1,27 @@
+<h1 style="text-align: center;">
+    Simple Register Form
+</h1>
+    <hr />
+    <p style="text-align: center;">
+        <label>Student Name </label><br />
+        <input type="text"  [(ngModel)] = "sname" />
+        <br /><br />
+        <label>Gender</label><br />
+    <input type="radio"  name="rdoGender"  value="Male"  [(ngModel)]="gender" />
+        <label>Male</label>
+    <input type="radio"  name="rdoGender"  value="Female"  [(ngModel)]="gender" />
+        <label>Female</label>
+        <br /><br />
+        <input type="checkbox"  [(ngModel)]="isGraduate"  /><label>Is Student Graudate</label>
+        <br /><br />
+        <label>Location</label><br />
+        <select [(ngModel)]="location">
+            <option value="-1">Select City</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Bangalore">Bangalore</option>
+        </select>
+        <br /><br />
+        <input type="button" value="Get Details" (click)="PrintDetails()" />
+    </p>
+    <h2 style="text-align: center;" [innerHTML]="msg"></h2>
+    

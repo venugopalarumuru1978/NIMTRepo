@@ -1,0 +1,18 @@
+<h1 style="text-align: center;">This is Home Component</h1>
+<h1 style="text-align: center;">Interpolation</h1>
+<h2>Student name : {{sname}}</h2>
+<h2>Student age : {{age}} years</h2>
+
+<hr />
+<h1 style="text-align: center;">Property Binding</h1>
+<input type="text"  [value] = "sname" />
+<input type="text"  [value] = "age" />
+<br />
+<h2><a [href]="url">Google</a></h2>
+<hr />
+<h1 style="text-align: center;">Event Binding</h1>
+<input type="button"  value="Click me" (click)="ChangeData()" />
+<h1 style="text-align: center;">Two Way Binding</h1>
+<input type="text"  [(ngModel)]="sname"  />
+<br />
+<input type="text"  [(ngModel)]="age" />

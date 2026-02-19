@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Button Demo</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <h1 style="text-align: center;">JS - DropdownList Demo</h1>
+    <hr />
+    <form  name="frmDdl">
+        <p style="text-align: center;">
+            <label>Location</label>
+            <br /><br />
+            <select name="ddlLoc" onchange="GetLocation()">
+                <option value="-1">Select Location</option>
+                <option  value="Hyderabad">Hyderabad</option>
+                <option  value="Amaravathi">Amaravathi</option>
+                <option  value="Bangalore">Bangalore</option>
+            </select>
+        </p>
+    </form>
+    <h3 style="text-align: center;"  id="result"></h3>
+    <script   type="text/javascript">
+        function  GetLocation()
+        {
+            let loc = frmDdl.ddlLoc.value;
+            if(loc!="-1")
+                document.getElementById("result").innerHTML  = "ur Location is " + loc;
+            else
+            {
+                alert("Please select location");
+                document.getElementById("result").innerHTML = "";
+            }                
+        }
+    </script>
+</body>
+</html>

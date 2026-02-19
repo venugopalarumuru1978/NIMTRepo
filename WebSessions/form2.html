@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Button Demo</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <h1 style="text-align: center;">JS - Textbox Button Demo</h1>
+    <hr />
+    <form  name="frmSample">
+        <p style="text-align: center;">
+            <input type="text"   name="txtPname"  placeholder="Enter ur Name" />
+            <input type="button"  value="Click Me" onclick="GetValue()" />
+        </p>
+    </form>
+    <p style="text-align: center;"  id="result">Show Results</p>
+    <script   type="text/javascript">
+        function  GetValue()
+        {
+            let str = frmSample.txtPname.value;
+            // document  =  it is an object which represents currently working web page
+            //document.getElementById("result").innerText  =  "<b>Hi, " +  str + "</b>";
+            document.getElementById("result").innerHTML  =  "<b>Hi, " +  str + "</b>";
+        }
+    </script>
+</body>
+</html>
