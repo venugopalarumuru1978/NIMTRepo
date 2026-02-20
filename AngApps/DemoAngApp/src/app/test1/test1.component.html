@@ -9,4 +9,22 @@ Addition of Two Values
     <br /><br />
     <input type="button"  value="Addition"  (click)="Addition()" />
 </p>
-<h2 style="text-align: center;">{{msg}}</h2>
+
+<h2 *ngIf="!chk" style="text-align: center;color:red">{{msg}}</h2>
+<h2 *ngIf="chk" style="text-align: center;color:green">{{msg}}</h2>
+<hr />
+
+<div style="text-align:center">
+<select  [(ngModel)]="country">
+    <option value="India">India</option>
+    <option value="USA">USA</option>
+    <option value="Canada">Canada</option>
+</select>
+</div>
+
+<div [ngSwitch]="country" style="text-align:center">
+    <h2 *ngSwitchCase="'India'">Interested To Study in India</h2>
+    <h2 *ngSwitchCase="'USA'">Interested To Study in USA</h2>
+    <h2 *ngSwitchCase="'Canada'">Interested To Study in Canada</h2>
+    <h2 *ngSwitchDefault>Please select any one Country</h2>
+</div>

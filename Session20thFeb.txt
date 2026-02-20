@@ -1,0 +1,161 @@
+Today's Agenda
+---------------
+1. Directives
+2. Forms
+3. Pipes
+---------------
+Directives :-
+
+these are angular keywords which can be used for different purposes. These all are used in  Html Pages only. 
+
+these are starts with "ngDirectiveName"
+
+ngModel
+ngIf
+ngClass
+ngFor
+ngSwitch
+--------------------
+ngIf :-  It is used to check condition in html page. 
+	<tag  *ngIf="Condition">
+		content
+	</tag>
+
+ngIf-else 
+
+<tag *ngIf="condition; then template1;else template2">
+</tag>
+
+here template1 and template2 are the containers where some info has to defined. it has to done with 
+ng-template tag. 
+
+<ng-template #templatename>
+	content
+</ng-template>
+-------------------
+ngClass :-  it is used to assign css classes to the variable to implement in the html elements.
+<tag   [ngClass] = "variable" />
+	Note :-  variable holds css class name which is defined in .css file
+-------------------
+ngFor :-  it is meant for looping process. 
+
+<tag  *ngFor="let var of arrayVariable">
+</tag>
+---------------------
+ngSwitch :- 
+
+<tag  [ngSwitch]="variable">
+	<tag *ngSwitchCase=" 'value-1' "/>
+	<tag *ngSwitchCase=" 'value-2' "/>
+	....
+	<tag *ngSwitchCase=" 'value-n' "/>
+	<tag *ngSwitchDefault/>
+</tag>
+-----------------
+How to create a class?
+	ng g class <classname>
+	ng g class employee
+	ng g component employee
+
+
+to add value to an array push() method can use
+	arrayname.push(value)
+
+to remove a value from an array 
+	arrayname.splice(indexval, no of values)
+-------------------
+Forms & Validations:- 
+As per angular, there are two types of forms 
+
+1. Template Driven Forms
+2. Reactive Driven Forms
+
+Template Driven Forms :- 
+these  forms normal form regularly creating using html, for that form by using anuglar we can apply validations. 
+
+this type of forms are useful whenever creating simple forms like Login, Feedback, Contact .....
+
+to create any type of forms first we have import "FormsModule". 
+
+------------------------
+Reactive Driven Forms :- 
+
+These forms are newly added forms into angular. 
+Here form creation will be done in typescript file later html control created. 
+
+1.  Import a Module called as "ReactiveFormsModule"
+2.  To represent each field  user following classes 
+		FormControl, FormGroup, FormBuild classes are used to hold group of controls. 
+3.  To specify validations, use "Validators" class
+
+For Validation purpose for Both Template & Reactive Driven Forms:-
+
+touched 
+	true  :  field focused
+	false :  field not focused
+
+untouched
+	true  :  field not focused
+	false :  field  focused
+
+pristine 
+	true  :  field not modified by the user
+	false :  field modified  by the user
+
+valid 
+	true :  field value is valid
+	false:  field value not valid
+
+invalid 
+	true :  field value not valid
+	false:  field value  valid
+
+^[0-9]*$ = Only Numbers
+^[a-zA-Z]*$ = only alphabets
+------------
+To get BootStrap
+ng add @ng-bootstrap/ng-bootstrap
+
+
+<form name="frmLogin"  method="POST"   action="pagename">
+
+<input type="submit" ..... />
+</form>
+------------------------
+Pipes :- these are used to transform the value presentation on html page. 
+		{{variable|pipename}}
+lowercase
+uppercase
+currency
+{{emp.salary|currency:"INR"}}  = indian 
+{{emp.salary|currency:"USD"}}  = US dollor
+{{emp.salary|currency:"EUR"}}  = Euros
+{{emp.salary|currency:"GBP"}}  = Briton Dollor
+date
+{{dinfo|date:"longDate"}}
+{{dinfo|date:"shortDate"}}
+{{dinfo|date:"fullDate"}}
+{{dinfo|date:"d-M-y"}}
+{{dinfo|date:"h:m:s"}} - time
+json
+percent   (0.1 to 1.0)    0.1 = 10% ...  1 - 100%
+slice
+number
+
+-------------------------------------
+FOrms
+HttpClient
+Observable
+Request Methods (GET/POST/PUT/DELETE)
+----------------------------------
+PostMan Tool Install
+
+
+
+
+
+
+
+
+
+
