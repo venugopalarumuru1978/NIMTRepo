@@ -23,5 +23,30 @@
         <br /><br />
         <input type="button" value="Get Details" (click)="PrintDetails()" />
     </p>
-    <h2 style="text-align: center;" [innerHTML]="msg"></h2>
     
+    <div  *ngIf="isGraduate; then temp1; else temp2"></div>
+
+    <ng-template #temp1>
+        <h2 [ngClass]="cssClass" [innerHTML]="msg"></h2>        
+    </ng-template>
+
+    <ng-template #temp2>
+        <h2 [ngClass]="cssClass" [innerHTML]="msg"></h2>
+    </ng-template>
+
+    <table width="100%" border="1">
+        <tr>
+            <td width="25%">
+                <ol type="A">
+                    <li *ngFor="let city of cities">{{city}}</li>
+                </ol>
+            </td>
+            <td width="75%">
+                <table width="100%" border="1">
+                    <tr *ngFor="let city of cities">
+                        <td>{{city}}</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>

@@ -1,0 +1,17 @@
+<h1 style="text-align: center;">
+    Login Form
+</h1>
+    <hr />
+<form >
+    <p style="text-align: center;">
+        <label>Username</label><br />
+        <input type="text"  [(ngModel)] = "uname" name="uname" required="required" />
+        <br /><br />
+        <label>Password</label><br />
+        <input type="text"  [(ngModel)] = "pwd" name="pwd" required="required" />
+        <br /><br />
+        <input type="submit"  value="Login here" (click)="LoginCheck()"  />
+    </p>
+    
+</form>
+    

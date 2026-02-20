@@ -1,0 +1,357 @@
+Today's Agenda
+--------------
+Angular
+    Intro
+    Components
+    Data Bindings
+    Directives
+    Routing
+------------------
+What is an TypeScript?
+	It is a programming language which has been developed using JavaScript.
+
+		JavaScript + Additional Features =  TypeScript
+			1.  Data Types are existed in TypeScript to declare variables
+				a. number = for integer and float
+				b. string =  for string values
+				c. boolean =  for boolean(true/false)
+				d. any 	   =  for any data type
+			2.   Arrow Functions
+			3.   It provides a compiler, so that to work with typescript
+				we have to install typescript software. 
+ 			4.   Intellisence :-  
+				it will provide all the methods when we go with dot operator.
+			5.  OOPS Concepts
+				Object, Class, Inheritance, Data Abstraction, Data Encapsulation
+
+Why TypeScript :-  To Simplify  JavaScript Code(with persepction of OOPS).
+
+Steps to Install TypeScript?
+
+1.  Download and Install Node JS?
+2.  Install TypeScript with following command. 
+
+What is an NPM?
+It is a Node Package Manager, it is world largest software library for the following languages
+			TypeScript
+			Angular(typescript)
+			React JS
+			Node JS
+			Vue JS
+			Express JS
+It has over millions of library files. To work with any lang in the list we need NPM. 
+Npm comes with Node JS. i.e. Once we install Node JS, it provides NPM. It is a freeware. 
+
+By going to http://nodejs.org, download and install NodeJS. 
+Once it is done, we can the software by checking it's versions at command prompts. 
+
+	C:\>node -v  :- shows node js Version
+	C:\>npm -v :- shows npm version
+What is an CLI?
+	Command Line Client, which provides set of commands to perform different actions. 
+
+How to install TypeScript?
+	1. Goto Command Prompt?
+	2. Use following command
+		npm install typescript -g
+
+Once typescript is intalled, check with following command
+	C:\>tsc  -v
+
+Steps to write TypeScript Program:- 
+1.  Open any text editor(VSCode).
+2.  Code the program as per the requirement.
+3.  Save the program with .ts extension
+4.  Go to command prompt, use following commands to compile and execute
+	for Compile :-
+			C:\>tsc  filename.ts
+	Once compilation is done, it will generate .js file for an execution
+	for Run :-
+			C:\>node filename.js
+----------------------
+How to Declare Variables in TypeScript?
+	var <variablename> : <data type> = <value>;
+----------------------
+OOPS Concepts:- 
+	OOPS :-  Object Oriented Programming Structure
+		It is a methodology to develop any applications in a secured way. OOPS provides data security.
+			Object
+			Class
+			Abstraction
+			Encapsulation
+			Inheritance
+			Polymarphisum
+--------------------------
+What is an Object?
+		It is a thing in the real world. 
+				any object has two parts
+				1. Attributes
+				2. Functionalities
+
+		Ex:-  Car is an Object
+			Attributes:-  Model, Company, Color, Capacity, .....
+			Functionality :-  Changing Gears, use breaks for Stop, .....
+
+		Mobile is an Object
+			Attributes:-  Model, Company, Memory Capacity, size, .....
+			Functionality :-  Making Calls, Surfing Internet, Taking Photos and Videos, Storing data, ..
+
+Class :- It is an encapsulated cell, which meant for defining attributes and functionalities of an object. 
+
+how to create a class:-
+
+class <classname>
+{
+	variable:data type=value  //attributes
+	.....
+	.....
+
+	methodname([parameters]):<return type> // functionalities
+	{
+		body of the method
+	}
+
+	......
+}
+
+Object Creation:- 
+	var ObjectName = new ClassName([parameter values])
+with the help of object, the class members are accessed.
+	Object.Variable/methodname()
+
+"this" keyword:-  here inside the class, it is used to access class variables.
+------------------------
+What is a constructor? 
+	it is a special method of the class which can be executed whenever object is created for that class.
+	purpose of the constructor, is to initialize instance varaibles at the time of object creation.
+
+how to create constructor?
+		as per typescript, constructor is created with "constructor" keyword. 
+		constructor([para meters])
+		{
+			body of the constructor
+		}
+----------------------
+Access Specifiers:- 
+private, public, protected
+-------------------------
+As per the inheritance,  to inherit a parent class to child class "extends" keyword is used. 
+class childclassname extends parentclassname
+{
+	....
+}
+------------------
+What is an Angular?
+It is a client side framework, which is used to create web applications. 
+It provides a skeleton of the project whenever we create application.
+
+It follows a structure called SPA(Single Page Application).
+It works with TypeScript.
+It is a open-source, so that we can use freely with NPM and Client Side CLI. 
+
+It can be used in combination  with any server side platform such as Java, Asp.net, Php, pYthon, etc
+It is a cross-platform i.e.  it works on any operating system.
+
+JavaScript
+jQuery (Modified version of JS)
+Angular JS (Single Page Application)
+Angular  (Modified version of Angular JS)
+
+We have different versions of Angular 2.0 ..... 10, 11,...
+latest version of Angular 20.0
+
+How to install Angular :- 
+
+1.  Install NPM(comes with Node JS)
+2.  Install TypeScript
+	npm install typescript -g
+3.  Install Angular with following command
+	npm install @angular/cli -g   // it always install latest version of Angular. 
+
+	npm install -g angular-cli@16.2.0  // it is meant for specific version
+	npm install -g @angular/cli@18.0
+How to uninstall existing angular  then install specific version of angular
+	npm uninstall -g angular-cli
+	npm cache clean
+	npm install -g angular-cli@16.2.0
+-----------------------------
+How to create an angular application?
+	Goto Command Prompt, then use following command
+		ng new <application name>
+
+How to run an Angular Application
+	1.  goto command prompt and enter into application folder by follwoing command
+		cd  ApplicationFolderName
+
+	2.  Use below given command
+		ng serve
+
+Once application is started, then it works with a port number 4200.
+	so that use follwing url on browser to get output
+		http://localhost:4200/
+
+Note :-  To stop application execution 
+		"Ctrl + C" has to used
+-----------------------------------
+What is an Component?
+A  Component is a unit of angular where it consist a set of files for different purposes.
+Angular having collection of components. A component is a combination different files as follows
+		An Html Page for Structure(Desinging) - (.html)
+		An CSS Page for Styling - (.css)
+		An TypeScript page for Script code - (.ts)
+		An Testing page for Test the code - (.spec.ts)
+
+By default every angular app having a companent called "App". "App" Component is a root component.
+
+use following command to create a component
+		ng g component <component name>
+
+once we create component, that has to be render into app component as follows
+1. Import component in app.component.ts file
+@Component({
+	.....
+  imports: [RouterOutlet, HomeComponent],
+	....
+})
+2. goto app.component.html then use selector as follows
+<app-home></app-home>
+------------------
+Data Bindings:-
+
+it is a relation b/w typescript  and html page. It is mainly used for data bindings of variables declared as well as methods defined in "ts" files.
+
+it can be done in 4 ways
+
+1.  Interpolation Bindings
+2.  Property Binding
+3.  Event Binding
+4.  Two - Way Binding
+
+1. Interpolation :- 
+		It is the process of showing typescript variable value in html page. 
+			use below given syntax in html page
+				{{variable name}}
+			As per typescript, the data types are 
+				string, number(integer & float), boolean(true/false), any
+				and variables can be declared as follows
+					var_name:data type = "initial value"
+
+2. Property Binding :- 
+		It is the process of binding a value to the specific attribute of the html tag. 
+		<tag  [attributename] = "variable" /></tag>
+
+	<a href="pagename" ... />  here "href" is a property
+
+	<img src="file name"  width="..."  height="..." alt="..." />  
+				here   "src, width, height, alt, ...." are the properties
+ 
+3. Event Binding :-  It is the process of adding events to the html elements
+		<tag  (eventname) = "method name" />
+
+4. Two way Binding :- 
+It is the process of binding a variable to any element and it is having reflection b/w variable and an element. i.e.  if we change value in element, that automatically reflected in variable and vice versa. 
+			here we have to use "ngModel" directive for the html tag. 
+
+			<tag  [(ngModel)] = "variable" />
+
+		here we have to import a package in .ts  file  "FormsModule" in Import Section
+
+import { FormsModule } from '@angular/forms';
+ imports: [
+   ....
+    FormsModule
+  ],
+-----------------------
+Routing :-  It is the concept of navigating pages/components within the web application. 
+
+Steps
+
+1.  import @angular/router package
+
+2.  Create Routes(set of links for components)  in app.routes.ts file
+	
+	export const routes: Routes = [
+	{path:"Link Text", component:ComponentName},
+	{path:"Link Text", component:ComponentName},
+	{path:"Link Text", component:ComponentName},
+	.............
+	];
+
+3. Add these routes into app.config.ts as follows
+export const appConfig: ApplicationConfig = {
+  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes)]
+};
+
+4. Goto app.component.ts then import RouterOutlet class in import section as follows
+imports: [RouterOutlet, RouterLink, ....],
+
+5. Now create a hyperlink for every route as follows  in  app.component.html
+	<a routerLink="Link Text">Link</a>
+
+6. Create a placeholder to display route/page content in app.component.html
+	<router-outlet> </router-outlet>
+-------------
+Router :-  this class object is used to navigate component dynamically based on events. 
+
+Steps
+1.  Import Router Class from @angular/router
+2.  Create an object Router Class as a constructor parameter. 
+3.  with that object, we can navigate page as follows
+		this.routerObject.navigate(['/linktext']);
+-----------------------
+Directives :-
+
+these are angular keywords which can be used for different purposes. These all are used in  Html Pages only. 
+
+these are starts with "ngDirectiveName"
+
+ngModel
+ngClass
+ngFor
+ngIf
+ngSwitch
+--------------------
+ngClass :-  it is used to assign css classes as variable to the html elements.
+
+ngIf :-  It is used to check condition in html page. 
+
+	<tag  *ngIf="Condition">
+		content
+	</tag>
+
+ngIf-else 
+
+<tag *ngIf="condition; then template1;else template2">
+</tag>
+
+here template1 and template2 are the containers where some info has to defined. it has to done with 
+ng-template tag. 
+
+<ng-template #templatename>
+	content
+</ng-template>
+-------------------
+ngFor :-  it is meant for looping process. 
+
+<tag  *ngFor="let var of arrayVariable">
+</tag>
+---------------------
+ngSwitch :- 
+
+<tag  [ngSwitch]="variable">
+	<tag *ngSwitchCase=" 'value-1' "/>
+	<tag *ngSwitchCase=" 'value-2' "/>
+	....
+	<tag *ngSwitchCase=" 'value-n' "/>
+	<tag *ngSwitchDefault/>
+</tag>
+
+How to create a class?
+	ng g class <classname>
+
+to add value to an array push() method can use
+	arrayname.push(value)
+
+to remove a value from an array 
+	arrayname.splice(indexval, no of values)
+--------------------------------

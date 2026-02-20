@@ -1,0 +1,29 @@
+<h1 style="text-align: center;">Employee Details</h1>
+<hr />
+<table width="100%" border="1">
+    <tr>
+        <th>Emp ID</th>
+        <th>Emp Name</th>
+        <th>Emp Job</th>
+        <th>Emp Salary</th>
+        <th>Operations</th>
+    </tr>
+
+    <tr *ngFor="let emp of empinfo;let i = index">
+        <td>{{emp.id}}</td>
+        <td>{{emp.ename|uppercase}}</td>
+        <td>{{emp.job|lowercase}}</td>
+        <td>{{emp.sal|currency:"INR"}}</td>
+        <td>
+            <input type="button"  value="Delete" (click)="DeleteEmp(i)" />
+        </td>
+    </tr>
+        <td><input type="text" [(ngModel)]="emp.id" /></td>
+        <td><input type="text" [(ngModel)]="emp.ename" /></td>
+        <td><input type="text" [(ngModel)]="emp.job" /></td>
+        <td><input type="text" [(ngModel)]="emp.sal" /></td>
+        <td><input type="button"  value="Add Emp" (click)="AddEmployee()" /></td>
+    <tr>
+
+    </tr>
+</table>
