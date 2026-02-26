@@ -1,0 +1,48 @@
+{
+  "Employee": [
+    {
+      "id": "1001",
+      "ename": "Praveen Kumar",
+      "job": "Developer",
+      "salary": 15000
+    },
+    {
+      "id": "1003",
+      "ename": "Seetharam",
+      "job": "HR-Manager",
+      "salary": 22000
+    },
+    {
+      "id": "1006",
+      "ename": "Jagan Reddy",
+      "job": "Tester",
+      "salary": 10000
+    },
+    {
+      "id": "1267",
+      "ename": "Lavanya",
+      "job": "HR-Manager",
+      "salary": "25000.00"
+    },
+    {
+      "id": "9087",
+      "ename": "Mahesh",
+      "job": "Tester",
+      "salary": "12000.00"
+    }
+  ],
+  "Student": [
+    {
+      "id": "101",
+      "sname": "Seetha",
+      "course": "java",
+      "fees": 12000
+    },
+    {
+      "id": "102",
+      "sname": "Kavitha",
+      "course": "java",
+      "fees": 12000
+    }
+  ]
+}

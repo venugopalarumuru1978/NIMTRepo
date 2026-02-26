@@ -1,0 +1,14 @@
+{
+  "name": "cucumberapp",
+  "version": "1.0.0",
+  "description": "kkk",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.7.0"
+  }
+}

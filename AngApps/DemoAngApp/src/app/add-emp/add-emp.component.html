@@ -1,0 +1,15 @@
+<h1 style="text-align: center;">Add New Employee</h1>
+<form #regEmp="ngForm" (ngSubmit)="newEmp()">
+<p style="text-align: center;">
+    <label>Emp ID </label><br />
+    <input type="text"  [(ngModel)]="emp.id" name= "id" /><br /><br />
+    <label>Emp Name </label><br />
+    <input type="text"  [(ngModel)]="emp.ename" name= "ename"  /><br /><br />
+    <label>Emp Job </label><br />
+    <input type="text"  [(ngModel)]="emp.job" name="job"  /><br /><br />
+    <label>Emp Salary </label><br />
+    <input type="text"  [(ngModel)]="emp.salary" name = "salary"  /><br />
+    <br /><br />
+    <input type="submit"  value="Save Employee"  />
+</p>
+</form>

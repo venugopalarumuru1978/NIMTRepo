@@ -11,5 +11,4 @@ export class Employee {
         this.sal = sal;
         this.job = job;
     }
-
 }
