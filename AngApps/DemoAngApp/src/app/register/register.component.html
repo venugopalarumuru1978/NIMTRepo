@@ -1,0 +1,27 @@
+<form [formGroup]="regForm" (ngSubmit)="printDetails()">
+    <h1>Reactive Driven Form(Type-2)</h1>
+    <label>Person Name</label><br />
+    <input type="text"  formControlName="personname" />
+    <br />
+    <span class="errorinfo" *ngIf="regForm.controls.personname.touched && regForm.controls.personname.invalid">
+        Person name should not be blank
+    </span>
+    <br />
+    <label>Phone Number</label><br />
+    <input type="text"  formControlName="phonenumber" />
+    <br />
+    <span class="errorinfo" *ngIf="regForm.controls.phonenumber.touched && regForm.controls.phonenumber.invalid">
+        Phone Number should not be blank
+    </span>
+    <br />
+    <label>Email</label><br />
+    <input type="text"  formControlName="email" />
+    <br />
+    <span class="errorinfo" *ngIf="regForm.controls.email.touched && regForm.controls.email.invalid">
+        Email should not be blank
+    </span>
+    <br />
+    <input type="submit" [disabled]="regForm.invalid"  value="Register Here" />
+    <br /><br />
+    <div [innerHTML]="msg" style="color:red"></div>
+</form>

@@ -1,17 +1,26 @@
 <h1 style="text-align: center;">
-    Login Form
+    Login Form(Template Driven Form)
 </h1>
     <hr />
-<form >
+<form #loginForm="ngForm" (ngSubmit)="LoginCheck(loginForm)" >
     <p style="text-align: center;">
         <label>Username</label><br />
-        <input type="text"  [(ngModel)] = "uname" name="uname" required="required" />
-        <br /><br />
+        <input type="text"  [(ngModel)] = "uname" name="uname" 
+        required="required" #uctrl="ngModel" />
+        <br />
+        <span class="errorinfo" *ngIf="uctrl.touched && uctrl.invalid">
+            Username must be entered.
+        </span>
+        <br />
         <label>Password</label><br />
-        <input type="text"  [(ngModel)] = "pwd" name="pwd" required="required" />
-        <br /><br />
-        <input type="submit"  value="Login here" (click)="LoginCheck()"  />
+        <input type="password"  [(ngModel)] = "pwd" name="pwd" 
+        required="required" #pctrl="ngModel" />
+        <br />
+        <span class="errorinfo" *ngIf="pctrl.touched && pctrl.invalid">
+            Password must be entered.
+        </span>
+        <br />
+        <input type="submit"  value="Login here"  />
     </p>
-    
+    <p style="text-align: center;">{{msg}}</p>
 </form>
-    
