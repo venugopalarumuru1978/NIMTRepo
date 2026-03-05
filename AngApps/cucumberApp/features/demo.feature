@@ -5,3 +5,8 @@ Feature:  Add Functionality
         Given Numbers are provided
         When Sum up both numbers here
         Then Display sum  of numbers
+
+    Scenario: Minus Two Numbers
+        Given Numbers are provided     
+        When minus those numbers
+        Then print minus value
