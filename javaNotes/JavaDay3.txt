@@ -1,0 +1,142 @@
+Today's Agenda
+---------------
+OOPS Concepts
+---------------
+OOPS :-  Object Oriented Programming Structure. 
+
+What is a Object Oriented Programming?
+		It is a programming architecture / methodology to develop secure based applications.
+
+Purpose of the OOPS Concepts:-  Primary goal of the OOPS is provide security for the data using in Application. 
+
+
+What are the oops concept
+-------------------------
+Object 
+Class 
+Data Abstraction
+Data Encapsulation
+Inheritance
+Polymarphisum
+
+Based on OOPS concepts, there are different programming languages, those are called Object Oriented Programming langs
+			Ex:-  C++,  JAVA, C#.Net, VB.Net, .......
+
+
+What is an Object?
+	It is an entity in the real world which has set of attributes and some functionalities. 
+			or
+	it is an real time entity which has an attributes and has an behaviours.
+
+	Ex:- Mobile is an Object
+		Attributes :-   Size, model, color, company, memory capacity, .....
+		Functionalities :-   Making calls, Surfing internet, making photos and videos, ....
+
+Every object is an instance of the their parent unit/blue print.
+
+What is a class?
+
+	It is an blue print of the object. 	
+		or
+	It is encapuslated cell which meant for defining attributes and functionalities for an object.
+
+class  <class_name>
+{
+	variable declarations (instance variables)
+
+	user defined methods.
+}
+
+======
+class DemoClass
+{
+	int x, y;  // instance variables, these are accessed in all the methods of that class. 
+
+	void  getData()
+	{
+		x = 100;
+		y = 200;
+	}
+
+	void  putData()
+	{
+		SOP(x)
+		SOP(y)
+		int sum = x+y;  // sum is a local variable
+		SOP(sum)
+	}
+}
+
+Object :-   It is an instance of the class. Every object is a isolated unit. i.e once any content stored, that cannot 		be travels to other object until we specify.
+
+		<Class_Name> <object> = new <Class_Name>([arg]);
+
+	Once object is created, we can access class members(variables/methods) as follows
+			object.variable/method_name
+
+	An object will created either in the same class if that class having main() method / Some other class 	whereever main() exist/other than main() method.
+--------------------------------------
+Access Specifiers :- these are used to specify how to access class members either inside / outside the class. 
+
+private :-  it allows to access class members only inside the class. 
+public  :-  it allows to access class memebrs inside and outside the class. 
+protected :-  it allows to access one class members into another specific class only. 
+
+Note :-  by default every class member is a public. 
+---------------------------------------------------------
+Classification of Class Members(Variables/methods)
+		there are two types of class members
+			1.  Non-Static Members / Instance Members
+			2.  Static Members
+
+A Non-Static Members are used to whenever required multiple of copies data. All Instances/Objects comes under 
+Non-Static process. 
+
+Static Members :-  All members are called as static members when those members are precdede with "static" keyword.
+			Static Variables
+			Static Methods
+1.  Static members are not occupies any space in Object. It has separate memory called class memory. 
+2.  A Static method can handle only static variables whereas Non-static methods can handle both static and non-static 		variables.
+3.  If a class having all static members, then no need to create an object for that class, call the members with class name only. 
+
+-----------------------------------
+Constructor:- It is a special method of the class which has the same name of class. 
+purpose of the constructor is to specify initial process for the object. i.e. initialize instance variables at the time of object creation. 
+
+1. Construtor will be executed whenever object is created for the class. 
+2. It can take parameters, for those parameters, we have to pass values at the time of object creation.
+3. A class can have multiple constructors, here each constructor should have different no of parameters. 
+
+-----------------------------------
+Getter and Setter Methods:- 
+	How to access a private variable outside the class for input and output. - using getter and setters
+
+These methods are used to access private variable outside the class.  
+
+setter methods are used to store value whereas getter methods are used to return value. 
+
+	public void setVariablename(parameter variable)
+	{
+		instance variable = parameter variable;
+	}
+
+	public <return type> getVariableName()
+	{
+		return <variablename>;
+	}
+-------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
