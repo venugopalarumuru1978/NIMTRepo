@@ -1,0 +1,113 @@
+Today's Agenda
+--------------
+Java
+--------------
+What is a Java?
+	It is a object oriented programming language used for developing different types of applications. 
+
+	It is also called as platform independent programming language. 
+
+
+As per the industry, there are different type of applications as follows
+
+1.  Desktop Applications :-  Applications runs on Local Machines Only. Ex: All Billing Softwares
+2.  Network Applications :-  These applications are runs on Client - Server Enviornment. Ex:-  Banking Softwares
+3.  Web Applications	 :-  These applications are runs on Internet.  Ex:-  All websites
+4.  Mobile Applications  :-  These applications are runs on Mobile     Ex:- All Mobile Apps
+5.  Device Applications  :-  These applications are used to activate electronice devices.  Ex:-  Device Drivers.
+
+Java is one of the programming lang to develop above all specified applications. Dotnet also same. 
+
+java  3 parts 
+
+J2SE :-  java 2 standard edition(CORE JAVA)  :-  LANGUAGE FUNDAMENTALS
+J2EE :-  JAVA 2 ENTERPRIZE EDITION(ADV JAVA) :-  APPLICATION DEVELOPMENT WILL BE DONE(DESKTOP, WEB, NETWORK,...)
+J2ME :-  JAVA 2 MICRO EDITION 		     :-  MOBILE APPLICATIONS
+
+To work with java, we need to download JDK(java development kit) Software
+
+JDK  - exist two parts  JVM  and JRE. 
+
+jvm :- Java Virtual Machine :-  It consist different OS enviornments to run java programs smootly
+jre :- Java Runtime Enviornment :-  It will provide library for the program execution. 
+------------------------------
+Structure of Java:- 
+
+importing packages
+
+class <classname>
+{
+	public static void main(String[] args)
+	{
+		body of the program
+	}
+}
+
+1.  Package :- It is a java library file, which includes collection of classes and interfaces. 
+		a pre-defined pacakge can be added to program with "import" statement
+
+		import package_name;
+
+		import  java.util.*;
+		import  java.util.List;
+2.  Every java program has to be written in a class, and that class identified by  "classname". 
+3.  program execution will be starts with main() method. it is a compiler identified user defined method.
+4.  main() method won't return any value, so that it is preceded with "void". 
+5.  static keyword will tell that, main() should be executed whenever class is loaded without having any object. 
+6.  public keyword will tell that, main() should be called outside the class. 
+
+Note:- Every java program saved with .java extension along with classname as filename. 
+Ex:-  
+class Abc
+{
+}
+
+filename :-  Abc.java
+-----------------------------------------
+Output Statement :- 
+
+System.out.println("stmt"/variable) :-  it allows to print output on console line by line. 
+System.out.print("stmt"/variable) :-  it allows to print output on console side by side.
+----------------------
+Data Types :-
+
+classification of Data is called data type. 
+As per java there are two types of Data Types
+	1.  Value Type Data Types	:-  these data types allows to store value directly in variable. 
+			All Primitive Data Types consider as Value Type.
+			byte, short, int, long, float, double, char, boolean, ...
+	2.  Reference Type Data Types  :-   these data types allows to store values in the form of Objects. 
+			All User Defined Data Types consider as Reference type. 
+			class, enum, .....
+
+Variable :-  it is a named memory location to store values temp
+
+		<data type> <variable name> = <value>;
+			int x = 10;
+
+What is a characters? 
+it is an alphabet or a digit nor a symbol. (' ')
+
+What is a String?
+Collection of characters / Array of characters ("  ")
+--------------------------------
+How to take input:- 
+
+Scanner :-  this class is used to read values into variables from specified input stream.
+
+steps
+1.    Import Scanner class as follows
+		import java.util.Scanner;
+
+2.    Create an Object  for Scanner Class as follows
+		Scanner  <object>  = new Scanner(System.in);   //  System.in is a inputstream - keyboard
+
+3.    Use following predefined methods to take input into variables. 
+			int  =  nextInt()
+			float = nextFloat()
+			long =  nextLong()
+			short = nextShort()
+			double = nextDouble()
+				next() :-  it allows to read string with single word.
+				nextLine() :-  it allows to read string with multiple words(sentence format). 
+-----------------------------------------------------------------------------------------------------------------

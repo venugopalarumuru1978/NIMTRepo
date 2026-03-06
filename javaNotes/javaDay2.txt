@@ -1,0 +1,134 @@
+Today's Agenda
+---------------
+1. Operators
+2. Control Statements(if, switch, while, for, do-while)
+3. Arrays
+4. Strings
+---------------
+Operator :- It is a symbol which has an action b/w operands. 
+java has got diff operators
+
+1. Arithematic  :-   +, -, /, %, * 
+2. Relational   :-   >,<,>=,<=, !=,(not equals), ==(equals)
+3. Logical	:-   &&(AND)  ||(OR)   !(NOT)
+4. Unary 	:-   ++ = increment by 1,  -- = decrement by 1
+5. Conditional	:-   ? :  (<condition>?<true>:<false>)
+6. Assignment	:-   =, +=, -=, /=, *=, %=
+7. Bitwise 	:-   >>, <<, &, |
+8. Concatenation:-   + (concatenate any two strings or string with any other data type)
+-----------------
+Control Statements :-  
+
+Conditional :-   if statement
+
+simple if
+
+if(conditon)
+{
+	set of stmts
+}
+
+
+if-else
+if(conditon)
+{
+	set of true stmts
+}
+else
+{
+	set of false stmts
+}
+
+else if
+
+if(cond-1)
+{
+	set of true stmts
+}
+else  if(cond-2)
+{
+	set of false stmts
+}
+.................
+.................
+
+nested if:- a if condition within another if condition without else part.
+-----------------------------------
+
+Branching :-   switch
+	switch(variable)
+	{
+		case <val-1>:
+			set of stmts
+			break
+		case <val-2>:
+			set of stmts
+			break;
+		default:
+			set of default stmts
+			break;
+	}
+
+Looping  :-   while, for, do-while
+
+while loop
+
+variable inital value
+while(condition)
+{
+	set of stmts
+	increment / decrement operations
+}
+----------------------
+for loop
+for(initial value;condition;iteration)
+{
+	set of stmts
+}
+-----------------------
+do - while
+
+variable inital value
+do
+{
+	set of stmts
+	increment / decrement operations
+}
+while(condition);
+--------------------------
+Arrays :- it is a variable which allows to store multiple values of same/specific data type.
+
+	there are 3 types of arrays
+			Single Dimensional
+			Double / Multi Dimensional
+			Jagged
+
+Single Dimensional :-   The process of arranging values either in single row / col is called single dimensional array
+				
+			<data type>  <variable>[] = {val1, val2, .....};  -- initilizing an array
+
+			<data type>   <variable>[] = new <data type>[size];  -- dynamic process
+
+			int x[] = {10,20,30,40,50};
+
+			int x[] = new int[5];
+
+Double Dimensional :-   The process of arranging values in no of rows  and cols.
+
+		<data type> <variable>[][] = {{val1, val2, ...},{val3, val4, ....}, .....};
+					initilizing process
+		int x[][] = {{10,20,30},{40,50,60}};
+
+		<data type>  <variable>[][] = new <data type>[rows][cols];
+		int x[][] = new int[3][3];
+
+jagged Array :-  The process of different sizes of single dimensional arrays are grouped as one array, that array is 				called jagged array.
+
+		<data type> <variable>[][] = {{val1, val2, val3, ...},{val4, val5, ....}, .....};
+					initilizing process
+
+		int x[][] = {{10,20,30}, {40,50}, {60,70,80,90}};
+
+		<data type> <variable>[][] = new <data type>[rows][];
+
+		
