@@ -25,10 +25,9 @@ public class StdMain {
 		if(ch.equalsIgnoreCase("no"))
 		{
 			System.out.println("College Name ");
-			String cname = sc.next();			
-			
+			String cname = sc.next();	
 			std = new Student(sid, sname, adrs, cname);			
-		}		
+		}
 		System.out.println("Student ID : " + std.getStudentId());
 		System.out.println("Student Name : " + std.getStudentName());
 		System.out.println("Student Address : " + std.getStudentAddress());
