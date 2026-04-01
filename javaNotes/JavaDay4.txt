@@ -1,0 +1,132 @@
+Today's Agenda
+--------------
+Inheritance
+Interface
+Polymarphisum
+Abstraction
+Exception Handling
+--------------
+Inheritance :- 
+The process of getting features from one item to another item is called as Inheritance. 
+purpose of Inheritance is :-  Reusability of the classes. 
+
+there are atleast two classes in inheritance process
+
+	1st class :-  parent/based/super class
+	2nd class :-  child/dervied/sub class
+
+always an inheritance from parent class to child class. 
+		parent - child
+		base - derived
+		super - sub
+
+by using "extends" keyword we can inherit based to child class. 
+To activate parent class members into child class "protected" access specifier is used. 
+No need to create an object for parent classes, just create an object for child class, then call both parent and child class methods.
+
+As per the OOPS Concepts
+
+there are different types of inheritances
+	1. Single Inheritance
+	2. Multiple Inheritance
+	3. MultiLevel Inheritance
+	4. Hirarchical Inheritance
+	5. Hybrid Inheritance
+----------------
+Data Abstraction:- 
+
+It is the process of hiding internal implementation details and showing only essential functionality to the user. 
+It focuses on what an object does rather than how it does it.
+
+Abstraction hides the complex details and shows only essential features.
+
+How to Achieve Abstraction?
+Java provides two ways to implement abstraction, which are listed below:
+
+1. Abstract Classes (Partial Abstraction)
+2. Interface (provides abstraction for behavior, may contain default or static methods)
+
+Abstract class:-  the process of creating class and not allows to create an object is called as  Abstract class. 
+		abstract keyword is sued to create an abstract class. 
+		it has abstract methods and concreate methods.
+
+	Abstract methods are having only declarations but it's implementation is in it's subclass. 
+	i.e. Every abstract class is a parent class. 
+-----------------
+Interface :- 
+It is one type of class which allows to only declaration of the methods. it is called as pure abstract class. 
+
+purpose is : to implement multiple inheritance. 
+
+interface  <iface name>
+{
+	method declarations
+}
+
+once we create an interface, it has to inherit to the it's child class by using "Implements" keyword as follows
+
+class <classname>  implements <interface1, interface2, ....>
+{
+	.......................
+}
+
+Note :-   
+A child class can inherit one parent class and multiple interfaces. Here first parent class then interfaces should be inherited.
+
+class parent1{}
+interface iface1{}
+interface iface2{}
+class child  extends parent1 implements iface1, iface2{}
+-----------------------
+Constructor in Inheritance :- 
+-----------------------
+1.  parent class constructor will be executed with child class object if that constructor is not having arg.
+2.  if parent class constructor having an arguments, then that constructor has to call in child class constructor
+	by using "super" keyword. 
+------------------------
+Polymarphisum :- The process of defining multiple actions on single unit is called as Polymarphisum. 
+
+			poly = many 
+			marphisum = forms
+To achive this process,  we have two methods
+
+1.  Overloading
+2.  Overriding
+
+OverLoading :- 
+The process of add on features to the existing unit without changing it's default action is called Overloading. 
+To achieve, we have to use method overloading process. 
+
+Method Overloading:-  the process of defining multiple method bodies for single method is called method overloading.
+	here we have to show differences b/w one method body to another method body except method name. 
+
+1.  Every method body should have different no of parameters. 
+	void Sample()
+	void Sample(int x)
+	void Sample(int x, float y)
+2.  If no of parameters are same, then change the data type of parameter. 
+	void Sample(float y)
+	void Sample(int x, int y)
+
+This type of polymarphisum is also called as Compile Time Polymarphisum. 
+---------
+OverRiding:-
+The process of replacement features to the existing unit is called Overriding. 
+this process will be achieved using method over-riding process. 
+
+Method OverRiding :- In this process, if both  parent and child classes having same content, i.e. same method names along same arguments with no of methods also same, then this process is used. 
+
+1.   Create an object for parent class then call parent class methods.
+2.   Create an object for child class then assign that object to the parent class object. 
+3.   Now call methods, it will child class methods.(Overriding)
+------------------------------
+Final  class :-  the class which won't inherit is called as Final Class. 
+
+	final classes are last child classes in inheritance /  A Indivisual class which won't inherit. 
+	for finall classes we can create an object then call methods. 
+
+class Abc{}
+class Bca extends Abc{}
+final class Cba extends Bca{}
+class Acb extends Cba{} X
+------------------------------
