@@ -1,0 +1,343 @@
+Today's Agenda
+---------------
+Mongo DB
+---------------
+SQL :-  Structured Query Language : Which has different commands to work with Structured Databases.
+
+NoSQL :- UnStructured or Semi-Strucutured Databases. 
+
+What is a NoSQL?
+
+It is a type of DBMS that is designed to handle and store large volumes of unstrcutured or semi-structure data.
+
+In General Traditional Databases uses tables and predefined schema to store data. Whereas NoSQL uses for completely unstructred data. 
+
+The NoSQL -  Initially it was called as Non-SQL later it has been modified as "Not Only SQL".
+
+When should NoSQL be used:- 
+1.  When a huge amount of data needs to be stored and retrived. 
+2.  The Data changes over time and is not structured. 
+
+In conclusion,  NoSQL Databases offers several benefits over tridtional relational databases such as 
+Flexibilty
+Scalbility
+Cost-Effectivness
+-----------------
+What is a Mongo DB?
+
+It is one of the  NoSQL Database. It is a Open - Source, Cross-platform and document oriented database.
+
+It provides high performance, high availability and automatic scaling.
+
+What is the purpose of Developing MongoDB
+
+All the modern applications required big data(structured and un-structured), fast features development, flexiable deployments needed when compare to traditional database systems.
+
+Features :-
+Scalability
+Performance
+High Availability
+Development faster
+Deployment easier
+
+Mongo DB uses JSON(key-value) format to store data.
+
+Key points to remembers
+
+1. JSON Data Model with dynamic schemas. 
+2. Auto-Sharding for horizantal scalability
+3. Built-in replication for high availability
+
+When compare to RDBMS advantages of MongoDB:-
+
+1.  MongoDb is schema less :-  Since it is not a having schema initally, dynamically we can create and 	work with it 			whereas RDBMS is not.
+2.  There is no complex joins in MongoDB.
+3.  It  provides the facility of the "deep query" because it supports a powerful dynamic query on documents.
+4.  It uses internal memory for storing working sets and this is the reason of its fast access.
+-----------------
+Note :-  Data stored in Mongo DB is JSON format, the query language of Mongo db : BSON -  Binary -JSON
+
+Terminalogy of MongoDb 
+
+RDBMS 		MongoDB
+-------------------------
+Database	Database
+Table		Collection
+Row		Document(BSON -  Binary JSON)
+Column		Field
+Index		Index
+Join		Embeded Document
+Forien Key	Reference
+Partition	Shard
+-------------------------
+Data Types in MongoDB
+String, Integer, Boolean, Double, Arrays, Object, Null, Symbol, Date
+--------------------------
+MongoDb Commands / Methods
+
+First Open MongoDb Shell
+
+Open Command Prompt, then type the following command
+		"mongosh"
+
+How to create a database?
+	"USE" command is used to create / change from one db to another db. 
+
+show dbs :- this command shows all the databases which are already existed. 
+show collections :-  this command shows all the collections created within the database. 
+
+How to create a collection?
+	Method - 1  :- to create empty collection 
+	db.createCollection("name")
+
+How to add documents into the collection?
+	db.collectionName.insertOne(json object)
+		or
+	db.collectionName.insertMany(array of Json Objects)
+
+	Ex:-
+	db.collectionName.insertOne({"key":"val", "key":"val", .....})
+
+db.Student.insertOne({"rollno":1001, "sname":"Pavan Kumar", "course":"java", "fees":15000.00})
+db.Person.insertOne({"pid":11, "pname":"Praveen","email":"praveen@gmail.com"});
+
+db.Person.insertMany([
+{"pid":12, "pname":"Kiran","email":"kiran@gmail.com"},
+{"pid":13, "pname":"Karan","email":"karan@gmail.com"}
+]);
+
+db.Student.insertMany(
+[
+{"rollno":1002, "sname":"Kiran Kumar", "course":"java", "fees":15000.00},
+{"rollno":1003, "sname":"Kalyan Kumar", "course":"java", "fees":15000.00},
+{"rollno":1004, "sname":"Suresh Kumar", "course":"java", "fees":15000.00}
+])
+
+db.Employee.insertOne({"empno":1001,"empname":"Jagan","job":"Developer","salary":12000.00});
+
+db.Employee.insertMany([
+{"empno":1002,"empname":"Murali","job":"Developer","salary":12000.00},
+{"empno":1003,"empname":"Prakash","job":"Tester","salary":10000.00},
+{"empno":1004,"empname":"Preethi","job":"HR-Manager","salary":22000.00},
+{"empno":1005,"empname":"Priya","job":"Tester","salary":10000.00}
+])
+
+Method - 2 :-  creating collection with data directly. 
+		db.NewCollectionName.insertOne/insertMany(jsonObject)
+Ex:-
+db.Cricket.insertMany(
+[
+{"crikNo":102,"cname":"Kohli","game":"tests","runs":15000},
+{"crikNo":103,"cname":"Samson","game":"T20","runs":1000},
+{"crikNo":104,"cname":"Tilak","game":"T20","runs":1100},
+{"crikNo":105,"cname":"Surya Kumar","game":"Oneday","runs":2000}
+]);
+
+How to retrive documents ?
+	db.CollectionName.find() :-  show all the documents
+	db.CollectionName.findOne() :-  it shows only first document.
+---------------------------
+Quering Data
+	db.CollectionName.find({condition})
+
+	Ex:- Show all employees who are working as Tester
+	db.Employee.find({"job":"Tester"})
+
+	Ex:-  Show all employees with only ename and job fields.
+	db.Employee.find({}, {ename:1, job:1})
+		
+	Mongo Db tells the which column should include and which one should exclude.
+			include = 1
+			exclude = 0
+	Ex:-  Show all Testers with only ename and job fields
+		db.Employee.find({"job":"Tester"}, {ename:1, job:1})
+---------------------------------
+Mongo Db Query Operators
+
+	there are different type of operators 
+		Comparison
+			$eq : equals
+			$ne : not equals
+			$gt : greater than(>)
+			$gte : greater than or equals(>=)
+			$lt :  less than(<)
+			$lte : less than or equals(<=)
+			$in  : matched within the array
+		Logical
+			$and
+			$or
+			$not
+			$nor
+		Evalution
+			$regex  : Allows the use of regular expression when evaluting field values
+			$text   : Performs a text search
+			$where  : uses a JavaScript expression to match documents
+
+	Ex:-  Show all employee who are having 10000 salary.	
+		db.Employee.find({salary:10000})
+		or
+		db.Employee.find({salary:{$eq:10000}})
+
+		Show all employees who are not having 10000 salary
+		db.Employee.find({salary:{$ne:10000}})
+
+		Show all employees who are having salary >12000
+		db.Employee.find({salary:{$gt:12000}})
+
+		Show all employees who are having salary >12000 include only ename, salary fields
+		db.Employee.find({salary:{$gt:12000}}, {ename:1, salary:1})
+
+		Show all Managers and Developers
+		db.Employee.find({"JOB":{$in:["Manager","Developer"]}});
+
+Examples on Logical Operators
+
+$and
+
+Show all emp whose salary >7000 and <9000
+db.Employee.find({$and:[{salary:{$gt:7000}}, {salary:{$lt:9000}}]})
+db.EmpInfo.find({$and:[{SALARY:{$gt:7000}}, {SALARY:{$lt:9000}}]})
+
+$or
+show all emps who are working as either developer or testers
+
+db.Employee.find({$or:[{job:{$eq:"Developer"}}, {job:{$eq:"Tester"}}]})
+db.EmpInfo.find({$or:[{COUNTRY:{$eq:"INDIA"}}, {COUNTRY:{$eq:"CHINA"}}]}, {FIRST_NAME:1, COUNTRY:1});
+
+$nor
+Show all employees who are not Testers
+
+db.Employee.find({$nor:[{job:{$eq:"Tester"}}]})
+db.EmpInfo.find({$nor:[{ROLE:{$eq:"MANAGER"}}]})
+
+Show all female managers
+db.EmpInfo.find({$and:[{GENDER:{$eq:'FEMALE'}}, {ROLE:{$eq:'MANAGER'}}]}, {FIRST_NAME:1, GENDER:1, ROLE:1});
+----------------
+Create a collection which should have multiple values for one attribue.
+
+db.Customers.insertMany(
+[
+{"cname":"Praveen", "location":"Hyderabad", "acc_banks":["SBI", "Axis"], "cdate":Date()},
+{"cname":"Pavan", "location":"Bangalore", "acc_banks":["SBI", "Axis", "HDFC"], "cdate":Date()},
+{"cname":"Paramesh", "location":"Kolkatta", "acc_banks":["HDFC", "Axis"], "cdate":Date()},
+]);
+
+Show all customers who are having account in HDFC bank
+
+db.Customers.find({acc_banks:{$eq:"HDFC"}})
+	or
+db.Customers.find({acc_banks:{$in:["HDFC"]}})
+
+Show all customers who are having accounts either in SBI or HDFC
+
+db.Customers.find({acc_banks:{$in:["HDFC", "SBI"]}})
+-----
+Dynamic Schema:- 
+
+db.Person.insertMany([
+{"pid":11, "pname":"murali", "email":"murali@gmail.com"},
+{"pid":12, "pname":"Kamal", "email":"kamal@gmail.com"},
+]);
+
+db.Person.insertMany([
+{"pid":13, "pname":"Mahesh", "email":"mahesh@gmail.com", "phone":"9090812345"},
+{"pid":14, "pname":"Komali", "email":"komali@gmail.com", "phone":"9090812343"},
+]);
+-------------
+Update document gives a facility, if document exist update it or add new document.
+
+	db.Person.updateOne(
+		{pid:14},
+		{
+			$set: 
+			{
+			   age:45, 
+			   company: "Sahasra Solutions"
+			}
+		},
+		{upsert:true}
+		)
+
+
+	db.Person.updateOne(
+		{pid:12},
+		{
+			$set: 
+			{
+			   pname: "Kiran Kumar",
+			   email: "kirankumar@gmail.com"
+			}
+		},
+		{upsert:true}
+		)
+
+	db.Person.updateOne(
+		{pid:25},
+		{
+			$set: 
+			{
+			   pname: "Kamal",
+			   email: "kamal@gmail.com"
+			}
+		},
+		{upsert:true}
+		)
+
+
+	db.Person.updateOne(
+		{pname:"Varun Kumar"},
+		{
+			$set: 
+			{
+			   pid:25,
+			   pname: "Varun Kumar",
+			   email:"varun@gmail.com",
+			   age:45, 
+			}
+		},
+		{upsert:true}
+		)
+
+	db.Student.updateOne(
+		{rollno:1010},
+		{
+			$set:
+			{
+				stdname:"Praveen",
+				course:"Dotnet",
+				fees:20000.00
+			}
+		},
+		{upsert:true}
+	)
+
+Here the above update query, allows to modify if conditions is true, if condition is false then it add's new document. 
+----------------------
+Renaming a Field:- 
+	db.Person.updateMany({}, {$rename:{pname:"personname"}})
+	db.Student.updateMany({}, {$rename:{stdname:"sname"}})
+-----------------------------------------
+Delete Documents :- 
+	There are two methods to delete the documents. 
+		deleteOne() :- Delete a document based  one condition true
+		deleteMany() :-  Delete multiple documents based on condition true
+
+	Delete a doc who name is having "Kavi Kumar"
+		db.Person.deleteOne({personname:"Kavi Kumar"})
+
+	Delete all documents
+		db.Person.deleteMany({})
+
+	Delete all emps who salary >=10000
+		db.EmpInfo.deleteMany({SAL:{$gte:10000}})
+		db.Student.deleteMany({course:{$eq:"Dotnet"}})
+
+Delete Collection:- 
+	use the following command to delete a collection
+		db.collectionName.drop()
+
+Delete Database:- 
+	use the following command to delete a database
+		db.dropDatabase()
+
+	Note :- before droping that database, you should be in that database.

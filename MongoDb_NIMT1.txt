@@ -1,0 +1,157 @@
+Regular Expression
+		To search a pattern in a string during the writing query.
+
+$regex  : Allows the use of regular expression when evaluting field values
+
+Points to remember :-
+It is not allowed this $regex in $in operator.
+If you want to add an expression inside a comma-separated list of a condition, then you have to use $regex Operator. 
+
+Syntax
+	{<Field> : {$regex: /pattern/, $Options: '<Options>'}}
+
+Options
+	$i  :-   To match both lower and upper case pattern strings
+	$m  :-   To include  ^ and $ in the pattern to match. i.e. specically
+			search like "starts with particular alphabet or ends with particular alphabet"
+	$x  :-    To ignore all the white space characters
+	$s  :-    To allow the dot character(.)
+
+1.  Show all emps who are working as Developer
+	db.EmpInfo.find({JOB: {$regex : "Developer"}})
+		or
+	db.EmpInfo.find({JOB: {$regex : "developer", $options:"i"}})
+				it ignores case senstive
+
+2.  Show all emps who's name starts with 'S'
+	db.EmpInfo.find({ENAME: {$regex : "^S"}})
+
+3.  Show all emps who's name ends with 'n'
+	db.EmpInfo.find({ENAME: {$regex : "n$"}})
+-------------------
+Aggregation :- 
+
+	These Operations process the data records/documents and return computed results. 
+	It collects values from various documents and groups them together and then performs
+	different operations like sum, average, min, max  etc. 
+
+	It can be perform in 3 ways
+		Aggregation Pipeline
+		Single-purpose aggregation
+		Map-Reduce Function
+
+Aggregation Pipeline:- 
+	It consist of stages and each stage transforms the document. 
+		or 
+	this pipeline is a multi stage pipeline, so that in each stage, the doc taken as input
+			produces output. 
+		
+		here we have to use aggregate() function as follows
+
+		db.CollectionName.aggregate(<expression>)
+
+	Stages, we have use following keywords/operators
+
+		$match  :-  it is used to filtering the docs can reduce the amount docs that given as 						input to the next stage(i.e.  Specify condition).
+		$group :-  It is used to group documents based on some value.
+		$sort  :-  it is used to sort the documents based on field
+		$limit :- it allows to tells that limit of documents to display
+
+	Accumlators : these are basically used in the group stage
+
+		sum :-  to find sum value
+		count :- to count the docs
+		avg :-  to find the avg value
+		max :- to find the max value
+		min :- to find the min value
+		first :- to get the first document from the grouping
+		last :- to get the last document from the grouping
+
+	Examples 	
+		Count all employees in Emp Collection
+		A. db.EmpInfo.aggregate([{$match:{}},{$count:"No of Employees"}])
+
+		1.  Count all emp's who are working as Manager
+			db.EmpInfo.aggregate([{$match:{JOB:"Manager"}},{$count:"No of Managers"}])
+
+		2. Show no of employees based on each job type.
+			db.EmpInfo.aggregate([{$group:{_id:"$JOB", Total_count:{$sum:1}}}])
+				
+		3. Show all sorted employees based "Emp Name" Asending order(1) / Desednig order(-1)
+			db.EmpInfo.aggregate([{'$sort':{'ENAME':1}}])
+					Asending Order
+			db.EmpInfo.aggregate([{'$sort':{'ENAME':-1}}])
+					Desending Order
+		4. Find the max salary from all employees
+			A. db.EmpInfo.aggregate([{'$sort':{'ENAME':-1}}, {$limit:1}])
+						or	
+			B. db.EmpInfo.aggregate([{$group:{_id:"", maxSalary:{$max:"$SAL"}}}])
+
+		5.  Show an employee details who are getting max salary in Developers			
+				db.EmpInfo.aggregate([{$match:{JOB:"Developer"}}, {'$sort':{'SAL':-1}}, {$limit:1}])	
+
+		6. Find the min salary from all employees
+				db.EmpInfo.aggregate([{$group:{_id:"", minSalary:{$min:"$SAL"}}}])
+
+		7. Find the sum salary from all employees
+				db.EmpInfo.aggregate([{$group:{_id:"", sumSalary:{$sum:"$SAL"}}}])
+		8. Find the avg salary from all employees
+				db.EmpInfo.aggregate([{$group:{_id:"", averageSalary:{$avg:"$SAL"}}}])
+		9. Find sum salaries of each deptno
+			db.EmpInfo.aggregate([{$group:{_id:"$DEPTNO", sumSalary:{$sum:"$SAL"}}}])
+
+		10. Find the max and min salaries of each deptno
+	db.EmpInfo.aggregate([{$group:{_id:"$DEPTNO", maxSalary:{$max:"$SAL"}, minSal:{$min:"$SAL"}}}])
+---------------------
+Single Purpose Aggregation :- this is used to find like distinct clause or count no of documents in a collections etc. 
+
+1. Show actual jobs from all employees
+		db.EmpInfo.distinct("JOB")
+2. Count the no of documents in a collection
+		db.EmpInfo.countDocuments()
+				or
+		db.EmpInfo.estimatedDocumentCount()
+---------------------
+Map Reduce Function :-  it is used to aggregating result for the large volume of data.
+		It has two main functions
+				map()  :-  groups all the docs
+				reduce() :-  performs operations on the grouped data. 
+
+Ex:-  Sum salaries based job type. 
+
+		var mapFun = function(){emit(this.JOB, this.SAL)}
+
+		var reduceFun = function(key, val){ return Array.sum(val) }
+
+		db.EmpInfo.mapReduce(mapFun, reduceFun, {'out':'Result'})
+
+		db.Result.find()
+-----------------
+Update Document :-  it allows to modify documents(rows) in a collection. 
+		for this, we have two methods
+			updateOne()  :- updates only one document based on condition
+			updateMany() :- updates multiple documents based on condition
+
+there are couple of operators exist to work with update document. 
+
+	Field Based Operators
+		$inc  :-  it works only number fields which increments existing value
+		$set  :-  it allows to update a value in specified field
+		$currentDate  :- sets the field value to the current date
+		$rename  :-   it allows to rename a field
+
+	db.CollectionName.updateOne({<condition>}, {<expression for update>})
+
+	1.  Modify Person age who are having name "Pavan Kumar"
+
+	db.Person.updateOne({pname:"Pavan Kumar"},{$set: {age:50}})
+	db.Student.updateOne({rollno:1001}, {$set: {stdname:"geetha sahasra"}})
+
+	2. Increase  every employee salary 1000 from existing salary. 
+	db.EmpInfo.updateMany({}, {$inc:{SAL:1000}})
+	db.Student.updateMany({}, {$inc:{fees:1000}})
+
+	3. Increase  all Developers salary 3000 from existing salary.
+		db.EmpInfo.updateMany({JOB:"Developer"}, {$inc:{SAL:3000}})
+		db.Student.updateMany({course:"Dotnet"}, {$inc:{fees:4000}})
+-------------------
