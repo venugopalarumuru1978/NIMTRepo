@@ -1,0 +1,36 @@
+Zumba Management System
+
+Database Tables  (CREATE IN MYSQL)
+
+Two tables
+
+Batches
+	BatchID	   BatchSlot    BatchTime      StartDate
+------------------------------------------------------------
+	    11        Morning       6-7AM        10-Apr-2026
+	    12        Evening       7-8PM        15-Apr-2026
+-------------------------------------------------------------
+
+Participants
+	Pid    CustomerName     PhoneNumber    Email   	BatchID
+----------------------------------------------------------------
+         1        ABC             89890         abc@g     11
+         2        BCA             89890         abc@g     11
+         3        CAB             89890         abc@g     12
+         4        CBA             89890         abc@g     12
+         5        ACB             89890         abc@g     12
+-----------------------------------------------------------------
+CREATE AN DYNAMIC WEB APPLICATION
+---------------
+create following jsp web pages
+A home page  for Navigation
+
+A  page for AddNewBatches
+A  page for viewallbatches
+A  page for Updatebatches
+
+A  page for AddNewParticipants
+A  page for viewallparticipants
+A  page for UpdateParticipants
+--------------------------------
+
